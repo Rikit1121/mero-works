@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meridian — Software Studio</title>
+  <meta name="description" content="Meridian is an independent software studio building modern software, AI products, and digital experiences." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav-wrap" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a href="#top" class="nav__brand" aria-label="Meridian home">
+        <span class="nav__mark" aria-hidden="true"></span>
+        <span class="nav__brand-name">Meridian</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="#services" class="nav__link">Services</a></li>
+        <li><a href="#projects" class="nav__link">Projects</a></li>
+        <li><a href="#process" class="nav__link">Process</a></li>
+        <li><a href="#about" class="nav__link">About</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="#contact" class="btn btn--dark">Work With Us</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="#services" class="nav__mobile-link">Services</a>
+      <a href="#projects" class="nav__mobile-link">Projects</a>
+      <a href="#process" class="nav__mobile-link">Process</a>
+      <a href="#about" class="nav__mobile-link">About</a>
+      <a href="#contact" class="btn btn--dark nav__mobile-cta">Work With Us</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="hero">
+      <div class="hero__sky" aria-hidden="true">
+        <div class="hero__art"></div>
+        <div class="hero__overlay"></div>
+      </div>
+
+      <div class="hero__inner">
+        <span class="hero__eyebrow">Independent Software Studio</span>
+        <h1 class="hero__title">Building software, AI&nbsp;products, and digital experiences.</h1>
+        <p class="hero__sub">We help businesses build modern software while creating products of our own.</p>
+
+        <div class="hero__cta">
+          <a href="#contact" class="btn btn--light btn--lg">Work With Us</a>
+          <a href="#projects" class="btn btn--ghost-light btn--lg">View Projects</a>
+        </div>
+
+        <div class="hero__cards">
+          <div class="hero-card">
+            <span class="hero-card__num">12+</span>
+            <span class="hero-card__label">Products shipped</span>
+          </div>
+          <div class="hero-card">
+            <span class="hero-card__num">7</span>
+            <span class="hero-card__label">Core capabilities</span>
+          </div>
+          <div class="hero-card">
+            <span class="hero-card__num">100%</span>
+            <span class="hero-card__label">Independent &amp; remote</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__scroll" aria-hidden="true">
+        <span>Scroll</span>
+        <span class="hero__scroll-line"></span>
+      </div>
+    </section>
+
+    <!-- ============ VISION (editorial statement) ============ -->
+    <section class="vision">
+      <div class="container">
+        <p class="vision__lead">
+          We believe great software should feel <em>effortless</em> — and that the
+          best products come from small, senior teams who stay close to the work.
+          Meridian builds for businesses that want to move fast without cutting corners.
+        </p>
+        <a href="#about" class="link-underline">Get to know us &rarr;</a>
+      </div>
+    </section>
+
+    <!-- ============ SERVICES ============ -->
+    <section class="section section--alt" id="services">
+      <div class="container">
+        <div class="section__head section__head--left">
+          <span class="eyebrow">Services</span>
+          <h2 class="section__title">What we build</h2>
+          <p class="section__lead">From first prototype to production systems — a focused set of capabilities for teams that want to move fast without cutting corners.</p>
+        </div>
+
+        <div class="services">
+          <article class="service">
+            <span class="service__index">01</span>
+            <div class="service__text">
+              <h3 class="service__title">Web Applications</h3>
+              <p class="service__body">Fast, reliable web apps on a modern stack — from dashboards to full SaaS platforms.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">02</span>
+            <div class="service__text">
+              <h3 class="service__title">AI Integrations</h3>
+              <p class="service__body">LLMs, automation, and intelligent features brought into your product where they add real value.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">03</span>
+            <div class="service__text">
+              <h3 class="service__title">Automation Systems</h3>
+              <p class="service__body">Replace repetitive manual work with dependable automated workflows and integrations.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">04</span>
+            <div class="service__text">
+              <h3 class="service__title">Custom Software</h3>
+              <p class="service__body">Tailored systems designed around your exact operations — not an off-the-shelf compromise.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">05</span>
+            <div class="service__text">
+              <h3 class="service__title">MVP Development</h3>
+              <p class="service__body">Validate an idea quickly with a lean, well-built first version ready for real users.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">06</span>
+            <div class="service__text">
+              <h3 class="service__title">Internal Business Tools</h3>
+              <p class="service__body">Custom internal tooling that streamlines operations and gives your team superpowers.</p>
+            </div>
+          </article>
+          <article class="service">
+            <span class="service__index">07</span>
+            <div class="service__text">
+              <h3 class="service__title">UI/UX Design</h3>
+              <p class="service__body">Clean, considered interfaces with the calm authority your product deserves.</p>
+            </div>
+          </article>
+          <article class="service service--note">
+            <div class="service__text">
+              <p class="service__note">Not sure which you need? Most engagements blend a few of these.</p>
+              <a href="#contact" class="btn btn--outline">Talk it through</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ FEATURED PROJECTS ============ -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Featured Projects</span>
+          <h2 class="section__title">Selected work</h2>
+          <p class="section__lead">A closer look at what we've been building.</p>
+        </div>
+
+        <figure class="figure">
+          <div class="figure__frame">
+            <div class="empty-state">
+              <div class="empty-state__badge">Coming soon</div>
+              <h3 class="empty-state__title">Case studies are on the way</h3>
+              <p class="empty-state__body">We're putting together a selection of our favourite builds. In the meantime, we're happy to walk you through relevant work directly.</p>
+              <a href="#contact" class="btn btn--outline">Request a portfolio</a>
+            </div>
+          </div>
+          <figcaption class="figure__cap">Fig. 1 — A curated selection of studio work, in progress.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ============ PROCESS ============ -->
+    <section class="section section--alt" id="process">
+      <div class="container">
+        <div class="section__head">
+          <span class="eyebrow">Process</span>
+          <h2 class="section__title">Simple and professional</h2>
+          <p class="section__lead">A clear path from first conversation to a product that's live and supported.</p>
+        </div>
+
+        <ol class="process">
+          <li class="process__step">
+            <span class="process__num">01</span>
+            <h3 class="process__title">Discovery</h3>
+            <p class="process__body">We learn your goals, constraints, and what success really looks like.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">02</span>
+            <h3 class="process__title">Design</h3>
+            <p class="process__body">We shape the experience and architecture before a line of code ships.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">03</span>
+            <h3 class="process__title">Development</h3>
+            <p class="process__body">We build in tight, transparent iterations you can follow the whole way.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">04</span>
+            <h3 class="process__title">Deployment</h3>
+            <p class="process__body">We ship to production with the tooling and confidence to scale.</p>
+          </li>
+          <li class="process__step">
+            <span class="process__num">05</span>
+            <h3 class="process__title">Support</h3>
+            <p class="process__body">We stay on to maintain, improve, and grow what we built together.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about">
+          <div class="about__text">
+            <span class="eyebrow">About</span>
+            <h2 class="section__title">An independent studio</h2>
+            <p class="about__body">Meridian is an independent software studio focused on building useful products and helping businesses bring ideas to life.</p>
+            <p class="about__body about__body--muted">We work as a small, senior team — close to the work, accountable for the outcome, and obsessed with the details that make software feel effortless.</p>
+            <div class="about__chips">
+              <span class="chip">Modern stack</span>
+              <span class="chip">AI-native</span>
+              <span class="chip">Product-minded</span>
+              <span class="chip">Remote-first</span>
+            </div>
+          </div>
+          <figure class="about__panel">
+            <div class="about__panel-img" role="img" aria-label="Pixel-art illustration of an independent software studio overlooking a lake and the Himalayas at sunset"></div>
+            <figcaption class="about__panel-cap">Built from the foothills, for the world.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT / FEATURED CTA ============ -->
+    <section class="section section--alt" id="contact">
+      <div class="container">
+        <div class="feature-card">
+          <div class="feature-card__grid" aria-hidden="true"></div>
+
+          <div class="feature-card__intro">
+            <span class="eyebrow eyebrow--light">Contact</span>
+            <h2 class="feature-card__title">Let's build something together.</h2>
+            <p class="feature-card__sub">Tell us what you're working on. We'll get back to you within one business day.</p>
+            <a href="mailto:hello@meridian.studio" class="feature-card__email">hello@meridian.studio</a>
+
+            <div class="mock-note" aria-hidden="true">
+              <div class="mock-note__icon">M</div>
+              <div class="mock-note__body">
+                <span class="mock-note__title">New message from Meridian</span>
+                <span class="mock-note__time">now</span>
+                <span class="mock-note__text">"Thanks for reaching out — let's find a time to talk."</span>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="field">
+              <label for="name" class="field__label">Name</label>
+              <input type="text" id="name" name="name" class="input" placeholder="Your name" required />
+            </div>
+            <div class="field">
+              <label for="email" class="field__label">Email</label>
+              <input type="email" id="email" name="email" class="input" placeholder="you@company.com" required />
+            </div>
+            <div class="field">
+              <label for="message" class="field__label">What are you building?</label>
+              <textarea id="message" name="message" class="input input--area" rows="4" placeholder="A few sentences about your project…" required></textarea>
+            </div>
+            <button type="submit" class="btn btn--dark btn--block btn--lg">Send message</button>
+            <p class="contact-form__status" id="formStatus" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__art" aria-hidden="true">
+      <div class="footer__art-img"></div>
+      <div class="footer__art-fade"></div>
+    </div>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="nav__mark" aria-hidden="true"></span>
+        <span class="footer__name">Meridian</span>
+        <p class="footer__tag">Building software, AI products, and digital experiences.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div class="footer__col">
+          <span class="footer__heading">Studio</span>
+          <a href="#services">Services</a>
+          <a href="#projects">Projects</a>
+          <a href="#process">Process</a>
+          <a href="#about">About</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__heading">Connect</span>
+          <a href="mailto:hello@meridian.studio">Email</a>
+          <a href="#contact">Contact</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>&copy; <span id="year"></span> Meridian. All rights reserved.</span>
+      <span>Made with calm authority.</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
