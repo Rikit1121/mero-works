@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projects — Mero Works</title>
+  <meta name="description" content="Selected work from Mero Works — products and client builds, from AI experiments to production software." />
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <!-- ============ NAV ============ -->
+  <header class="nav-wrap" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a href="../index.html" class="nav__brand" aria-label="Mero Works home">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="7" fill="#0081c0"/>
+          <path d="M5 21 L10 10 L14 16 L18 10 L23 21 Z" fill="#fff"/>
+        </svg>
+        <span class="nav__brand-name">Mero Works</span>
+      </a>
+
+      <ul class="nav__links">
+        <li><a href="../index.html#services" class="nav__link">Services</a></li>
+        <li><a href="index.html" class="nav__link nav__link--active" aria-current="page">Projects</a></li>
+        <li><a href="../index.html#process" class="nav__link">Process</a></li>
+        <li><a href="../index.html#about" class="nav__link">About</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <a href="../index.html#contact" class="btn btn--dark">Work With Us</a>
+      </div>
+
+      <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="nav__mobile" id="navMobile" hidden>
+      <a href="../index.html#services" class="nav__mobile-link">Services</a>
+      <a href="index.html" class="nav__mobile-link">Projects</a>
+      <a href="../index.html#process" class="nav__mobile-link">Process</a>
+      <a href="../index.html#about" class="nav__mobile-link">About</a>
+      <a href="../index.html#contact" class="btn btn--dark nav__mobile-cta">Work With Us</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ============ PAGE HEADER ============ -->
+    <section class="page-header">
+      <div class="container page-header__inner">
+        <a href="../index.html" class="page-header__back">&larr; Back to home</a>
+        <span class="eyebrow">Portfolio</span>
+        <h1 class="page-header__title">Projects</h1>
+        <p class="page-header__lead">A selection of products we're building in-house and software we've shipped with partners. We care about the craft as much as the outcome.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS GRID ============ -->
+    <section class="section section--alt">
+      <div class="container">
+        <!-- Cards are rendered from projects-data.js so counts stay in sync. -->
+        <div class="projects-grid" id="projectsGrid" data-base="../"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="footer__art" aria-hidden="true">
+      <div class="footer__art-img"></div>
+      <div class="footer__art-fade"></div>
+    </div>
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="footer__brand-row">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#0081c0"/>
+            <path d="M5 21 L10 10 L14 16 L18 10 L23 21 Z" fill="#fff"/>
+          </svg>
+          <span class="footer__name">Mero Works</span>
+        </span>
+        <p class="footer__tag">Building software, AI products, and digital experiences.</p>
+      </div>
+      <nav class="footer__cols" aria-label="Footer">
+        <div class="footer__col">
+          <span class="footer__heading">Studio</span>
+          <a href="../index.html#services">Services</a>
+          <a href="index.html">Projects</a>
+          <a href="../index.html#process">Process</a>
+          <a href="../index.html#about">About</a>
+        </div>
+        <div class="footer__col">
+          <span class="footer__heading">Connect</span>
+          <a href="mailto:merowworks@gmail.com">Email</a>
+          <a href="../index.html#contact">Contact</a>
+          <a href="#top">Back to top</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer__bottom">
+      <span>&copy; <span id="year"></span> Mero Works. All rights reserved.</span>
+      <span>Made with calm authority.</span>
+    </div>
+  </footer>
+
+  <script src="../projects-data.js"></script>
+  <script src="../script.js"></script>
+</body>
+</html>

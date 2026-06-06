@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Meridian — Software Studio</title>
-  <meta name="description" content="Meridian is an independent software studio building modern software, AI products, and digital experiences." />
+  <title>Mero Works — Software Studio</title>
+  <meta name="description" content="Mero Works is an independent software studio building modern software, AI products, and digital experiences." />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -16,9 +17,12 @@
   <!-- ============ NAV ============ -->
   <header class="nav-wrap" id="top">
     <nav class="nav" aria-label="Primary">
-      <a href="#top" class="nav__brand" aria-label="Meridian home">
-        <span class="nav__mark" aria-hidden="true"></span>
-        <span class="nav__brand-name">Meridian</span>
+      <a href="#top" class="nav__brand" aria-label="Mero Works home">
+        <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+          <rect width="28" height="28" rx="7" fill="#0081c0"/>
+          <path d="M5 21 L10 10 L14 16 L18 10 L23 21 Z" fill="#fff"/>
+        </svg>
+        <span class="nav__brand-name">Mero Works</span>
       </a>
 
       <ul class="nav__links">
@@ -66,8 +70,8 @@
 
         <div class="hero__cards">
           <div class="hero-card">
-            <span class="hero-card__num">12+</span>
-            <span class="hero-card__label">Products shipped</span>
+            <span class="hero-card__num" id="statProjects" data-suffix="">0</span>
+            <span class="hero-card__label">Projects in the works</span>
           </div>
           <div class="hero-card">
             <span class="hero-card__num">7</span>
@@ -92,7 +96,7 @@
         <p class="vision__lead">
           We believe great software should feel <em>effortless</em> — and that the
           best products come from small, senior teams who stay close to the work.
-          Meridian builds for businesses that want to move fast without cutting corners.
+          Mero Works builds for businesses that want to move fast without cutting corners.
         </p>
         <a href="#about" class="link-underline">Get to know us &rarr;</a>
       </div>
@@ -171,22 +175,13 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section__head">
-          <span class="eyebrow">Featured Projects</span>
-          <h2 class="section__title">Selected work</h2>
-          <p class="section__lead">A closer look at what we've been building.</p>
-        </div>
-
-        <figure class="figure">
-          <div class="figure__frame">
-            <div class="empty-state">
-              <div class="empty-state__badge">Coming soon</div>
-              <h3 class="empty-state__title">Case studies are on the way</h3>
-              <p class="empty-state__body">We're putting together a selection of our favourite builds. In the meantime, we're happy to walk you through relevant work directly.</p>
-              <a href="#contact" class="btn btn--outline">Request a portfolio</a>
-            </div>
+          <span class="eyebrow">Selected Work</span>
+          <h2 class="section__title">Projects we're proud of</h2>
+          <p class="section__lead">A growing collection of products and client builds — from AI experiments to production software. Take a closer look at what we've been making.</p>
+          <div class="section__cta">
+            <a href="projects/index.html" class="btn btn--dark btn--lg">View Projects</a>
           </div>
-          <figcaption class="figure__cap">Fig. 1 — A curated selection of studio work, in progress.</figcaption>
-        </figure>
+        </div>
       </div>
     </section>
 
@@ -236,7 +231,7 @@
           <div class="about__text">
             <span class="eyebrow">About</span>
             <h2 class="section__title">An independent studio</h2>
-            <p class="about__body">Meridian is an independent software studio focused on building useful products and helping businesses bring ideas to life.</p>
+            <p class="about__body">Mero Works is an independent software studio focused on building useful products and helping businesses bring ideas to life.</p>
             <p class="about__body about__body--muted">We work as a small, senior team — close to the work, accountable for the outcome, and obsessed with the details that make software feel effortless.</p>
             <div class="about__chips">
               <span class="chip">Modern stack</span>
@@ -263,12 +258,12 @@
             <span class="eyebrow eyebrow--light">Contact</span>
             <h2 class="feature-card__title">Let's build something together.</h2>
             <p class="feature-card__sub">Tell us what you're working on. We'll get back to you within one business day.</p>
-            <a href="mailto:hello@meridian.studio" class="feature-card__email">hello@meridian.studio</a>
+            <a href="mailto:merowworks@gmail.com" class="feature-card__email">merowworks@gmail.com</a>
 
             <div class="mock-note" aria-hidden="true">
-              <div class="mock-note__icon">M</div>
-              <div class="mock-note__body">
-                <span class="mock-note__title">New message from Meridian</span>
+                <div class="mock-note__icon">M</div>
+                <div class="mock-note__body">
+                  <span class="mock-note__title">New message from Mero Works</span>
                 <span class="mock-note__time">now</span>
                 <span class="mock-note__text">"Thanks for reaching out — let's find a time to talk."</span>
               </div>
@@ -304,8 +299,13 @@
     </div>
     <div class="container footer__inner">
       <div class="footer__brand">
-        <span class="nav__mark" aria-hidden="true"></span>
-        <span class="footer__name">Meridian</span>
+        <span class="footer__brand-row">
+          <svg class="logo-mark" viewBox="0 0 28 28" fill="none" aria-hidden="true">
+            <rect width="28" height="28" rx="7" fill="#0081c0"/>
+            <path d="M5 21 L10 10 L14 16 L18 10 L23 21 Z" fill="#fff"/>
+          </svg>
+          <span class="footer__name">Mero Works</span>
+        </span>
         <p class="footer__tag">Building software, AI products, and digital experiences.</p>
       </div>
       <nav class="footer__cols" aria-label="Footer">
@@ -318,18 +318,19 @@
         </div>
         <div class="footer__col">
           <span class="footer__heading">Connect</span>
-          <a href="mailto:hello@meridian.studio">Email</a>
+          <a href="mailto:merowworks@gmail.com">Email</a>
           <a href="#contact">Contact</a>
           <a href="#top">Back to top</a>
         </div>
       </nav>
     </div>
     <div class="container footer__bottom">
-      <span>&copy; <span id="year"></span> Meridian. All rights reserved.</span>
+      <span>&copy; <span id="year"></span> Mero Works. All rights reserved.</span>
       <span>Made with calm authority.</span>
     </div>
   </footer>
 
+  <script src="projects-data.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
