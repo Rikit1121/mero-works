@@ -51,5 +51,16 @@ window.PROJECTS = [
     monogram: "F",
     github: "",
     demo: "https://foam-house-e-commerce-website.vercel.app/"
+  },
+  {
+    name: "Himalayan Chautari Resort",
+    status: "Live",
+    statusType: "live",
+    description: "A luxury resort website for Himalayan Chautari — a mountain retreat in Nepal. Crafted to capture the serenity of the Himalayas with immersive visuals, room showcases, and seamless booking experience.",
+    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    cover: "assets/Resort_himalaya.png",
+    monogram: "H",
+    github: "",
+    demo: "https://himalayanchautariresort.vercel.app/"
   }
 ];

@@ -232,7 +232,7 @@ em { font-style: italic; color: var(--color-sunset-deep); }
   -webkit-backdrop-filter: blur(9px);
 }
 .nav__brand { display: inline-flex; align-items: center; gap: var(--spacing-8); }
-.logo-mark { width: 28px; height: 28px; display: block; flex: none; border-radius: 7px; }
+.logo-mark { width: 34px; height: 34px; display: block; flex: none; border-radius: 8px; object-fit: cover; }
 .nav__brand-name { font-family: var(--font-grotesk); font-weight: var(--font-weight-bold); font-size: 19px; letter-spacing: -0.02em; color: var(--color-dark-charcoal); }
 .nav__links { display: flex; align-items: center; gap: var(--spacing-4); margin-left: auto; }
 .nav__link {
