@@ -3,9 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data:;
+    connect-src 'self';
+    frame-ancestors 'none';
+  " />
+
   <title>Projects — Mero Works</title>
   <meta name="description" content="Selected work from Mero Works — products and client builds, from AI experiments to production software." />
+  <link rel="canonical" href="https://meroworks.com/projects/" />
   <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meroworks.com/projects/" />
+  <meta property="og:title" content="Projects — Mero Works" />
+  <meta property="og:description" content="A portfolio of products and client builds from Mero Works — from AI experiments to live production software." />
+  <meta property="og:image" content="https://meroworks.com/assets/hero.png" />
+  <meta property="og:site_name" content="Mero Works" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Projects — Mero Works" />
+  <meta name="twitter:description" content="A portfolio of products and client builds from Mero Works." />
+  <meta name="twitter:image" content="https://meroworks.com/assets/hero.png" />
+
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Mero Works" />
+  <meta name="theme-color" content="#1f1f29" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -14,6 +46,7 @@
   <link rel="stylesheet" href="../styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- ============ NAV ============ -->
   <header class="nav-wrap" id="top">
     <nav class="nav" aria-label="Primary">
@@ -50,7 +83,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- ============ PAGE HEADER ============ -->
     <section class="page-header">
       <div class="container page-header__inner">
@@ -101,11 +134,16 @@
           <a href="../index.html#contact">Contact</a>
           <a href="#top">Back to top</a>
         </div>
+        <div class="footer__col">
+          <span class="footer__heading">Legal</span>
+          <a href="../privacy.html">Privacy Policy</a>
+          <a href="../privacy.html#terms">Terms of Use</a>
+        </div>
       </nav>
     </div>
     <div class="container footer__bottom">
       <span>&copy; <span id="year"></span> Mero Works. All rights reserved.</span>
-      <span>Made with calm authority.</span>
+      <span><a href="../privacy.html" style="color:inherit;border-bottom:1px solid rgba(255,255,255,0.2);">Privacy</a> · Made with calm authority.</span>
     </div>
   </footer>
 

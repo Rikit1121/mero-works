@@ -3,10 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── Security ─────────────────────────────────────────────── -->
+  <!-- Blocks clickjacking, MIME-sniffing, and restricts resource origins. -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin" />
+  <meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation=(), payment=()" />
+  <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self';
+    script-src 'self' 'unsafe-inline';
+    style-src 'self' 'unsafe-inline' https://fonts.googleapis.com;
+    font-src 'self' https://fonts.gstatic.com;
+    img-src 'self' data:;
+    connect-src 'self' https://api.web3forms.com;
+    frame-ancestors 'none';
+  " />
+
+  <!-- ── Identity ──────────────────────────────────────────────── -->
   <title>Mero Works — Software Studio</title>
   <meta name="description" content="Mero Works is an independent software studio building modern software, AI products, and digital experiences." />
+  <link rel="canonical" href="https://meroworks.com/" />
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
 
+  <!-- ── Open Graph (social sharing) ──────────────────────────── -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://meroworks.com/" />
+  <meta property="og:title" content="Mero Works — Software Studio" />
+  <meta property="og:description" content="An independent software studio building modern software, AI products, and digital experiences." />
+  <meta property="og:image" content="https://meroworks.com/assets/hero.png" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Mero Works" />
+
+  <!-- ── Twitter / X Card ─────────────────────────────────────── -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mero Works — Software Studio" />
+  <meta name="twitter:description" content="An independent software studio building modern software, AI products, and digital experiences." />
+  <meta name="twitter:image" content="https://meroworks.com/assets/hero.png" />
+
+  <!-- ── Crawlers ──────────────────────────────────────────────── -->
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large" />
+  <meta name="author" content="Mero Works" />
+
+  <!-- ── Theme / PWA ───────────────────────────────────────────── -->
+  <meta name="theme-color" content="#1f1f29" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="Mero Works" />
+
+  <!-- ── Fonts ─────────────────────────────────────────────────── -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -14,6 +60,7 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
   <!-- ============ NAV ============ -->
   <header class="nav-wrap" id="top">
     <nav class="nav" aria-label="Primary">
@@ -50,7 +97,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main-content">
     <!-- ============ HERO ============ -->
     <section class="hero">
       <div class="hero__sky" aria-hidden="true">
@@ -271,19 +318,27 @@
           </div>
 
           <form class="contact-form" id="contactForm" novalidate>
+            <input type="hidden" name="access_key" value="7f5ac412-8a73-43b9-905a-9e5e9b177581" />
+            <input type="hidden" name="subject" value="New message from Mero Works site" />
+            <input type="hidden" name="from_name" value="Mero Works Contact Form" />
+            <input type="checkbox" name="botcheck" style="display:none" />
+
             <div class="field">
-              <label for="name" class="field__label">Name</label>
-              <input type="text" id="name" name="name" class="input" placeholder="Your name" required />
+              <label for="cf-name" class="field__label">Name</label>
+              <input type="text" id="cf-name" name="name" class="input" placeholder="Your name" required />
             </div>
             <div class="field">
-              <label for="email" class="field__label">Email</label>
-              <input type="email" id="email" name="email" class="input" placeholder="you@company.com" required />
+              <label for="cf-email" class="field__label">Email</label>
+              <input type="email" id="cf-email" name="email" class="input" placeholder="you@company.com" required />
             </div>
             <div class="field">
-              <label for="message" class="field__label">What are you building?</label>
-              <textarea id="message" name="message" class="input input--area" rows="4" placeholder="A few sentences about your project…" required></textarea>
+              <label for="cf-message" class="field__label">What are you building?</label>
+              <textarea id="cf-message" name="message" class="input input--area" rows="4" placeholder="A few sentences about your project…" required></textarea>
             </div>
-            <button type="submit" class="btn btn--dark btn--block btn--lg">Send message</button>
+            <button type="submit" class="btn btn--dark btn--block btn--lg" id="cfSubmit">
+              <span class="btn-label">Send message</span>
+              <span class="btn-spinner" aria-hidden="true"></span>
+            </button>
             <p class="contact-form__status" id="formStatus" role="status" aria-live="polite"></p>
           </form>
         </div>
@@ -322,11 +377,16 @@
           <a href="#contact">Contact</a>
           <a href="#top">Back to top</a>
         </div>
+        <div class="footer__col">
+          <span class="footer__heading">Legal</span>
+          <a href="privacy.html">Privacy Policy</a>
+          <a href="privacy.html#terms">Terms of Use</a>
+        </div>
       </nav>
     </div>
     <div class="container footer__bottom">
       <span>&copy; <span id="year"></span> Mero Works. All rights reserved.</span>
-      <span>Made with calm authority.</span>
+      <span><a href="privacy.html" style="color:inherit;border-bottom:1px solid rgba(255,255,255,0.2);">Privacy</a> · Made with calm authority.</span>
     </div>
   </footer>
 

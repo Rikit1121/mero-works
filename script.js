@@ -23,13 +23,13 @@ document.addEventListener('DOMContentLoaded', () => {
       const coverClass = hasCover ? ' project-card__cover--img' : '';
       const coverStyle = hasCover ? ` style="background-image:url('${esc(base + p.cover)}')"` : '';
       const monogram = esc(p.monogram || (p.name ? p.name[0] : '?'));
-      const statusType = p.statusType === 'active' ? ' project-card__status--active' : '';
+      const statusType = p.statusType === 'active' ? ' project-card__status--active' : p.statusType === 'live' ? ' project-card__status--live' : '';
       const stack = (p.stack || []).map((t) => `<li class="tag">${esc(t)}</li>`).join('');
       const github = p.github
-        ? `<a href="${esc(p.github)}" target="_blank" rel="noopener" class="btn btn--dark">${ghIcon} GitHub</a>`
+        ? `<a href="${esc(p.github)}" target="_blank" rel="noopener noreferrer" class="btn btn--dark">${ghIcon} GitHub</a>`
         : '';
       const demo = p.demo
-        ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener" class="btn btn--outline">Live Demo</a>`
+        ? `<a href="${esc(p.demo)}" target="_blank" rel="noopener noreferrer" class="btn btn--outline">Live Demo</a>`
         : '<span class="btn btn--outline btn--disabled" aria-disabled="true" title="Demo coming soon">Demo — soon</span>';
       return `<article class="project-card">
         <div class="project-card__cover${coverClass}" data-monogram="${monogram}"${coverStyle} role="img" aria-label="${esc(p.name)} cover art">
@@ -100,23 +100,63 @@ document.addEventListener('DOMContentLoaded', () => {
     revealEls.forEach((el) => el.classList.add('is-visible'));
   }
 
-  // Contact form (demo — no backend)
+  // Contact form — Web3Forms (https://web3forms.com)
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
-  if (form && status) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const name = form.name.value.trim();
-      const email = form.email.value.trim();
-      const message = form.message.value.trim();
-      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  const submitBtn = document.getElementById('cfSubmit');
 
-      if (!name || !validEmail || !message) {
+  if (form && status && submitBtn) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const nameVal = form.querySelector('[name="name"]').value.trim();
+      const emailVal = form.querySelector('[name="email"]').value.trim();
+      const messageVal = form.querySelector('[name="message"]').value.trim();
+      const validEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+      const accessKey = form.querySelector('[name="access_key"]').value;
+
+      // Client-side validation
+      if (!nameVal || !validEmail || !messageVal) {
         status.textContent = 'Please fill in your name, a valid email, and a message.';
+        status.className = 'contact-form__status contact-form__status--error';
         return;
       }
-      status.textContent = `Thanks, ${name.split(' ')[0]} — your message is ready to send. (Connect a backend or form service to deliver it.)`;
-      form.reset();
+
+      // Warn dev if the key hasn't been replaced yet
+      if (!accessKey || accessKey === 'YOUR_ACCESS_KEY') {
+        status.textContent = 'Form not yet configured — see README for setup instructions.';
+        status.className = 'contact-form__status contact-form__status--error';
+        return;
+      }
+
+      // Loading state
+      submitBtn.disabled = true;
+      submitBtn.classList.add('is-loading');
+      status.textContent = '';
+      status.className = 'contact-form__status';
+
+      try {
+        const data = new FormData(form);
+        const res = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: data,
+        });
+        const json = await res.json();
+
+        if (res.ok && json.success) {
+          status.textContent = `Message sent, ${nameVal.split(' ')[0]}! We'll be in touch soon.`;
+          status.className = 'contact-form__status contact-form__status--success';
+          form.reset();
+        } else {
+          throw new Error(json.message || 'Submission failed');
+        }
+      } catch (err) {
+        status.textContent = 'Something went wrong. Please email us directly at merowworks@gmail.com';
+        status.className = 'contact-form__status contact-form__status--error';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('is-loading');
+      }
     });
   }
 });

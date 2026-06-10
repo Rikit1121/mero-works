@@ -3,30 +3,53 @@
 
    Add a project by appending an object to this array.
    The homepage hero stat and the /projects page both read
-   from here, so counts and cards stay in sync automatically.
+   from here automatically — no other files need editing.
 
    Fields:
-     name        (string)  required
-     status      (string)  e.g. "Active Development", "Live", "Archived"
-     statusType  (string)  "active" gives the pulsing green dot
-     description (string)  required
-     stack       (string[]) technologies
-     cover       (string)  optional image path (e.g. "assets/browseros.png"
-                            from home, resolved automatically on /projects)
-     monogram    (string)  optional letter shown when there's no cover
-     github      (string)  optional repo URL
-     demo        (string)  optional live demo URL
+     name        (string)   required
+     status      (string)   e.g. "Active Development", "Live", "Archived"
+     statusType  (string)   "active" → pulsing green dot | "live" → solid blue
+     description (string)   required
+     stack       (string[]) technologies shown as tags
+     cover       (string)   image path relative to /assets/ folder
+                            (e.g. "assets/browseros.png")
+     monogram    (string)   letter shown when there's no cover image
+     github      (string)   repo URL — shown as a GitHub button
+     demo        (string)   live URL — shown as a "Live Demo" button
+                            (omit or leave "" for "Demo — soon")
    ========================================================= */
 window.PROJECTS = [
   {
     name: "BrowserOS",
     status: "Active Development",
     statusType: "active",
-    description: "An experimental browser extension exploring AI-powered browsing, productivity workflows, and intelligent web interactions.",
-    stack: ["TypeScript", "React", "Chrome Extensions API", "LLM / AI", "Vite"],
-    cover: "",
+    description: "A Chrome extension for reducing browser clutter, spotting distraction patterns, and making tab-heavy sessions feel calmer. Combines local browser-state analysis, focus actions, and lightweight behavioral awareness — designed to feel like a calm assistant, not a noisy dashboard.",
+    stack: ["TypeScript", "React", "Vite", "Tailwind CSS", "Chrome Extensions MV3"],
+    cover: "assets/BrowserOS.png",
     monogram: "B",
-    github: "https://github.com/",
+    github: "https://github.com/Rikit1121/browseros",
     demo: ""
+  },
+  {
+    name: "Himalaya Palace",
+    status: "Live",
+    statusType: "live",
+    description: "A premium restaurant website for Himalaya Palace — Flavors of the Himalayas. Built with a focus on atmosphere, storytelling, and elegant UI that brings the warmth of Nepali hospitality to the web.",
+    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    cover: "assets/himalaya_palace.png",
+    monogram: "H",
+    github: "",
+    demo: "https://himalaya-palace.vercel.app/"
+  },
+  {
+    name: "Foam House",
+    status: "Live",
+    statusType: "live",
+    description: "A full-featured e-commerce website for Foam House, Nepal's premium home furnishings store. Product catalogue, gallery, custom furniture inquiry system, and WhatsApp integration — built for Kathmandu's discerning homeowners.",
+    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
+    cover: "assets/Foam_house.png",
+    monogram: "F",
+    github: "",
+    demo: "https://foam-house-e-commerce-website.vercel.app/"
   }
 ];
