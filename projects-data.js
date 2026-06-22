@@ -12,7 +12,7 @@
      description (string)   required
      stack       (string[]) technologies shown as tags
      cover       (string)   image path relative to /assets/ folder
-                            (e.g. "assets/browseros.png")
+                            (e.g. "assets/nepayatra.png")
      monogram    (string)   letter shown when there's no cover image
      github      (string)   repo URL — shown as a GitHub button
      demo        (string)   live URL — shown as a "Live Demo" button
@@ -20,15 +20,15 @@
    ========================================================= */
 window.PROJECTS = [
   {
-    name: "BrowserOS",
-    status: "Active Development",
-    statusType: "active",
-    description: "A Chrome extension for reducing browser clutter, spotting distraction patterns, and making tab-heavy sessions feel calmer. Combines local browser-state analysis, focus actions, and lightweight behavioral awareness — designed to feel like a calm assistant, not a noisy dashboard.",
-    stack: ["TypeScript", "React", "Vite", "Tailwind CSS", "Chrome Extensions MV3"],
-    cover: "assets/BrowserOS.png",
-    monogram: "B",
-    github: "https://github.com/Rikit1121/browseros",
-    demo: ""
+    name: "NepaYatra",
+    status: "Live",
+    statusType: "live",
+    description: "A travel platform helping Indian visitors plan trips to Nepal — border crossings, destinations, route planner, travel guides, and curated itineraries from India's closest Himalayan neighbour.",
+    stack: ["React", "TypeScript", "Tailwind CSS", "Vercel"],
+    cover: "assets/nepayatra.png",
+    monogram: "N",
+    github: "",
+    demo: "https://nepayatra.com/"
   },
   {
     name: "Himalaya Palace",
@@ -51,16 +51,5 @@ window.PROJECTS = [
     monogram: "F",
     github: "",
     demo: "https://foam-house-e-commerce-website.vercel.app/"
-  },
-  {
-    name: "Himalayan Chautari Resort",
-    status: "Live",
-    statusType: "live",
-    description: "A luxury resort website for Himalayan Chautari — a mountain retreat in Nepal. Crafted to capture the serenity of the Himalayas with immersive visuals, room showcases, and seamless booking experience.",
-    stack: ["HTML", "CSS", "JavaScript", "Vercel"],
-    cover: "assets/Resort_himalaya.png",
-    monogram: "H",
-    github: "",
-    demo: "https://himalayanchautariresort.vercel.app/"
   }
 ];
